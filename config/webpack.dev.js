@@ -3,6 +3,9 @@ const { merge } = require("webpack-merge");
 const baseWebpackConfig = require("./webpack.config.js");
 const path = require("path");
 // const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const { mockMiddleware } = require('../tools/middleware.js')
+const fs = require('fs')
+
 function resolve(dir) {
 	return path.join(__dirname, dir);
 }
@@ -20,10 +23,23 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 		// historyApiFallback: {
 		//   disableDotRule: true,
 		// }
+
+    // webpack-dev-server4.x
+    // onBeforeSetupMiddleware (devServer) {
+    //   const mockFile = path.join(__dirname, '../tools/mock.js')
+    //   if (fs.existsSync(mockFile)) {
+    //     devServer.app.use(mockMiddleware(mockFile))
+    //   }
+    // }
+
+    // webapck-dev-server3.x
+    before (app) {
+      const mockFile = path.join(__dirname, '../tools/mock.js')
+      if (fs.existsSync(mockFile)) {
+        app.use(mockMiddleware(mockFile))
+      }
+    }
 	},
-	// devServer: {
-	//   hot: true
-	// },
 	plugins: [
 		// new ReactRefreshWebpackPlugin(),
 		// new CleanWebpackPlugin(),
