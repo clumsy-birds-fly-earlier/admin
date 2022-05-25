@@ -7,6 +7,8 @@ import App from './app';
 import "core-js/stable"; // 负责处理ECMAScript的核心语法， 如propmise 
 import "regenerator-runtime/runtime" //   负责处理generator语法
 
+
+
 const render = Component => {
     ReactDOM.render(
         <HashRouter>
@@ -17,9 +19,9 @@ const render = Component => {
     );
 }
 
-
+if (module.hot) {
+    module.hot.accept(() => {
+        render(App);
+    })
+}
 render(App);
-
-
-
-

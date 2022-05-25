@@ -17,7 +17,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
+        extensions: ['.js', '.jsx'],
         alias: {
             '@': resolve('../src')
         }
@@ -26,6 +26,7 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|ts|jsx)$/,
+                exclude: /node_modules/,
                 use: ['babel-loader']
             },
             {

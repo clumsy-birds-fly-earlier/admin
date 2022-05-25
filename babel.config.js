@@ -6,10 +6,10 @@ module.exports = {
             useBuiltIns: 'usage',
             corejs: 3
         }],
-        ['@babel/preset-typescript']
+        '@babel/preset-react',
+        '@babel/preset-typescript'
     ],
     plugins: [
-        REACT_APP_API === 'dev' && 'react-refresh/babel',
-        '@babel/plugin-syntax-dynamic-import',
+        REACT_APP_API === 'dev' && 'react-refresh/babel'
     ].filter(Boolean)
 }

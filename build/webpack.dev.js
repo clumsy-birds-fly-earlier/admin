@@ -3,8 +3,6 @@ const { merge } = require("webpack-merge");
 const baseWebpackConfig = require("./webpack.config.js");
 const path = require("path");
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-
-
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
@@ -15,16 +13,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   devServer: {
     hot: true,
-    contentBase: path.resolve(__dirname, "../dist"),
-    inline: true,
+    // contentBase: path.resolve(__dirname, "../public"),
     port: 3000,
     open: true,
     proxy: {
 
     },
-    quiet: true,
+    quiet: false,
     historyApiFallback: {
-
       disableDotRule: true,
     }
   },
@@ -36,7 +32,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         REACT_APP_API: '"dev"',
       },
     }),
-
     new ReactRefreshWebpackPlugin()
   ],
 });
