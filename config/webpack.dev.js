@@ -10,8 +10,6 @@ function resolve(dir) {
 const devWebpackConfig = merge(baseWebpackConfig, {
   mode: "development",
   devtool: "cheap-module-source-map",
-
-
   target: 'web',
   devServer: {
     hot: true,

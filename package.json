@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "npm run dev",
-    "dev": "webpack serve  --config build/webpack.dev.js ",
-    "build": "webpack  --config build/webpack.build.js"
+    "dev": "webpack serve  --config config/webpack.dev.js ",
+    "build": "webpack  --config config/webpack.build.js"
   },
   "dependencies": {
     "axios": "^0.27.2",
