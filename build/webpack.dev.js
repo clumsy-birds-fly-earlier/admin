@@ -11,20 +11,25 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   mode: "development",
   devtool: "cheap-module-source-map",
 
+
+  target: 'web',
   devServer: {
     hot: true,
-    // contentBase: path.resolve(__dirname, "../public"),
-    port: 3000,
-    open: true,
+    // port: 3000,
+    open: false,
     proxy: {
 
     },
     quiet: false,
-    historyApiFallback: {
-      disableDotRule: true,
-    }
+    // historyApiFallback: {
+    //   disableDotRule: true,
+    // }
   },
+  // devServer: {
+  //   hot: true
+  // },
   plugins: [
+    new ReactRefreshWebpackPlugin(),
     // new CleanWebpackPlugin(),
     new webpack.DefinePlugin({
       "process.env": {
@@ -32,7 +37,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         REACT_APP_API: '"dev"',
       },
     }),
-    new ReactRefreshWebpackPlugin()
+
   ],
 });
 

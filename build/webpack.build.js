@@ -20,8 +20,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         filename: 'static/js/[name]_[contenthash:8].js'
     },
     plugins: [
-
-
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: '"production"',

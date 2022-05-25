@@ -9,6 +9,7 @@ import "regenerator-runtime/runtime" //   负责处理generator语法
 
 
 
+
 const render = Component => {
     ReactDOM.render(
         <HashRouter>
@@ -19,9 +20,9 @@ const render = Component => {
     );
 }
 
-if (module.hot) {
-    module.hot.accept(() => {
-        render(App);
-    })
-}
+// if (module.hot) {
+//     module.hot.accept(['./app.js'], () => {
+//         render(App);
+//     })
+// }
 render(App);
