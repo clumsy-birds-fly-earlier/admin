@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import { HashRouter} from "react-router-dom";
 import ReactDOM from 'react-dom';
 import App from './app';
 // polyfill
