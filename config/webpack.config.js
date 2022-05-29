@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const WebpackBar = require("webpackbar");
+const ESLintPlugin = require('eslint-webpack-plugin');
 function resolve(dir) {
     return path.join(__dirname, dir)
 }
@@ -83,6 +84,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new ESLintPlugin({fix:true}),
         new WebpackBar(),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
