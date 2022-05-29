@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './app';
 // polyfill
 // webpack4 自动加载了, webpack5 需要自己配置
-import "core-js/stable"; // 负责处理ECMAScript的核心语法， 如propmise 
+import "core-js/stable"; // 负责处理ECMAScript的核心语法，如promise 
 import "regenerator-runtime/runtime" //   负责处理generator语法
 
 

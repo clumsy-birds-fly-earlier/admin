@@ -2,11 +2,7 @@ const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.config.js')
 
-
-
-
 const path = require('path');
-
 
 function resolve(dir) {
     return path.join(__dirname, dir)
