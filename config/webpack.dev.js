@@ -31,7 +31,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     //     devServer.app.use(mockMiddleware(mockFile))
     //   }
     // }
-
     // webapck-dev-server3.x
     before (app) {
       const mockFile = path.join(__dirname, '../tools/mock.js')
