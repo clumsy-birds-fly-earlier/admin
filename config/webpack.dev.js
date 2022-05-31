@@ -14,7 +14,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 	devServer: {
 		hot: true,
 		// port: 3000,
-		open: false,
+		open: true,
 		proxy: {},
 		quiet: false,
 		// historyApiFallback: {
