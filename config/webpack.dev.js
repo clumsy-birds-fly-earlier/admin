@@ -2,7 +2,6 @@ const webpack = require("webpack");
 const { merge } = require("webpack-merge");
 const baseWebpackConfig = require("./webpack.config.js");
 const path = require("path");
-// const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const { mockMiddleware } = require("../tools/middleware");
 const fs = require('fs')
 
@@ -20,23 +19,22 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 		//   disableDotRule: true,
 		// }
 
-    // webpack-dev-server4.x
-    // onBeforeSetupMiddleware (devServer) {
-    //   const mockFile = path.join(__dirname, '../tools/mock.js')
-    //   if (fs.existsSync(mockFile)) {
-    //     devServer.app.use(mockMiddleware(mockFile))
-    //   }
-    // }
-    // webapck-dev-server3.x
-    before (app) {
-      const mockFile = path.join(__dirname, '../tools/mock.js')
-      if (fs.existsSync(mockFile)) {
-        app.use(mockMiddleware(mockFile))
-      }
-    }
+		// webpack-dev-server4.x
+		// onBeforeSetupMiddleware (devServer) {
+		//   const mockFile = path.join(__dirname, '../tools/mock.js')
+		//   if (fs.existsSync(mockFile)) {
+		//     devServer.app.use(mockMiddleware(mockFile))
+		//   }
+		// }
+		// webapck-dev-server3.x
+		before(app) {
+			const mockFile = path.join(__dirname, "../tools/mock.js");
+			if (fs.existsSync(mockFile)) {
+				app.use(mockMiddleware(mockFile));
+			}
+		},
 	},
 	plugins: [
-		// new ReactRefreshWebpackPlugin(),
 		// new CleanWebpackPlugin(),
 		new webpack.DefinePlugin({
 			"process.env": {

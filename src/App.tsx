@@ -5,7 +5,9 @@ import styled from "styled-components";
 const Warp = styled.div`
 	color: #000;
 	font-size: 24px;
-`
+`;
+// 用于测试jest转译样式文件没毛病
+import "./index.css";
 
 const App: FC = () => {
 	const [count, setCount] = useState<number>(0);
@@ -17,7 +19,9 @@ const App: FC = () => {
 	return (
 		<Warp>
 			<div>{count}</div>
-			<button onClick={() => setCount((c) => c + 1)}>add</button>
+			<button className="button" onClick={() => setCount((c) => c + 1)}>
+				add
+			</button>
 		</Warp>
 	);
 };
