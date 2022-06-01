@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const WebpackBar = require("webpackbar");
+const ESLintPlugin = require('eslint-webpack-plugin');
 function resolve(dir) {
 	return path.join(__dirname, dir);
 }
@@ -58,46 +59,51 @@ module.exports = {
 			//     ],
 			// },
 
-			// webpack5 内置asset模块
-			{
-				test: /\.(png|svg|gif|jpe?g)$/,
-				type: "asset",
-				generator: {
-					filename: "img/[name].[hash:4][ext]",
-				},
-				parser: {
-					dataUrlCondition: {
-						maxSize: 30 * 1024,
-					},
-				},
-			},
-			{
-				test: /\.(ttf|woff2?)$/,
-				type: "asset/resource",
-				generator: {
-					filename: "font/[name].[hash:3][ext]",
-				},
-			},
-		],
-	},
-	plugins: [
-		new WebpackBar(),
-		new CleanWebpackPlugin(),
-		new HtmlWebpackPlugin({
-			filename: "index.html",
-			favicon: "public/favicon.ico",
-			template: resolve("../public/index.html"),
-			inject: true,
+            // webpack5 内置asset模块
+            {
+                test: /\.(png|svg|gif|jpe?g)$/,
+                type: 'asset',
+                generator: {
+                    filename: "img/[name].[hash:4][ext]"
+                },
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 30 * 1024
+                    }
+                }
+            },
+            {
+                test: /\.(ttf|woff2?)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'font/[name].[hash:3][ext]'
+                }
+            }
+        ]
+    },
+    plugins: [
+        new ESLintPlugin({
+			fix:true,
+			extensions: [".js", ".jsx", "ts", ".tsx"]
 		}),
-		new CopyWebpackPlugin({
-			patterns: [
-				{
-					from: "public",
-					globOptions: {
-						ignore: ["**/index.html"],
-					},
-				},
-			],
-		}),
-	],
+        new WebpackBar(),
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            filename: "index.html",
+            favicon: 'public/favicon.ico',
+            template: resolve("../public/index.html"),
+            inject: true,
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: 'public',
+                    globOptions: {
+                        ignore: ['**/index.html']
+                    }
+                }
+            ]
+        })
+    ]
+
 };

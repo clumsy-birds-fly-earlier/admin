@@ -5,9 +5,6 @@ const path = require("path");
 // const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const { mockMiddleware } = require("../tools/middleware");
 const fs = require('fs')
-function resolve(dir) {
-	return path.join(__dirname, dir);
-}
 
 const devWebpackConfig = merge(baseWebpackConfig, {
 	mode: "development",
