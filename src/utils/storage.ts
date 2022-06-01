@@ -1,17 +1,17 @@
 // TODO: to remove
-const KEY_NAME = "my-app-";
+const KEY_NAME = 'my-app-';
 
 const set = (key: string, value: string) => {
-	localStorage.setItem(KEY_NAME + key, value);
+  localStorage.setItem(KEY_NAME + key, value);
 };
 
 const get = (key: string) => {
-	return localStorage.getItem(KEY_NAME + key);
+  return localStorage.getItem(KEY_NAME + key);
 };
 
 const storage = {
-	get,
-	set,
+  get,
+  set,
 };
 
 export { storage };

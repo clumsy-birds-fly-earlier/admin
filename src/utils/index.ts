@@ -1,7 +1,7 @@
-export * as storage from "./storage";
+export * as storage from './storage';
 
 const sum = (a: number, b: number) => {
-	return a + b;
+  return a + b;
 };
 
 export { sum };
