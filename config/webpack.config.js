@@ -82,7 +82,10 @@ module.exports = {
         ]
     },
     plugins: [
-        new ESLintPlugin({fix:true}),
+        new ESLintPlugin({
+			fix:true,
+			extensions: [".js", ".jsx", "ts", ".tsx"]
+		}),
         new WebpackBar(),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
