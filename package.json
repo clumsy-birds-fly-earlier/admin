@@ -6,7 +6,7 @@
     "start": "npm run dev",
     "dev": "webpack serve --config config/webpack.dev.js ",
     "build": "webpack  --config config/webpack.build.js",
-    "lint": "eslint src/**/*.{js,jsx,vue,ts,tsx} --fix",
+    "lint": "eslint src/**/*.{ts,tsx} --fix",
     "prepare": "husky install",
     "test": "jest"
   },
