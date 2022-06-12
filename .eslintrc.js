@@ -7,9 +7,9 @@ module.exports = {
     extends: [
       // 'plugin:react/recommended',
       // 'standard',
-      // 'plugin:prettier/recommended'
       'alloy',
-      'alloy/typescript'
+      'alloy/typescript',
+      'plugin:prettier/recommended'
     ],
     // parser: '@typescript-eslint/parser',
     // parserOptions: {

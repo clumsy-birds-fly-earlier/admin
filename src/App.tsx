@@ -10,7 +10,7 @@ const Warp = styled.div`
 `
 
 const App: FC = () => {
-  const [count, setCount] = useState<number>(0)
+  const [count, setCount] = useState<number>(0);
 
   useEffect(() => {
     // axios.get("/api/test").then(console.log, console.warn);
