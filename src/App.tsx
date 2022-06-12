@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import './index.css';
 
 const Warp = styled.div`
-  color: #000;
+  color: #666;
   font-size: 24px;
 `;
 
