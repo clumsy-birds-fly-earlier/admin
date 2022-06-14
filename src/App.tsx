@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
-import {RouteProps} from 'react-router'
+// import {RouteProps} from 'react-router'
 // import axios from "axios";
 import styled from 'styled-components';
 // 用于测试jest转译样式文件没毛病
@@ -12,12 +12,12 @@ const Warp = styled.div`
 
 
 
-type AppProps = RouteProps & {
-  name: string;
-}
+// type AppProps = RouteProps & {
+//   name: string;
+// }
 
-const App: FC<AppProps> = (props) => {
-  console.log(props.location)
+const App: FC = () => {
+  // console.log(props.location)
   const [count, setCount] = useState<number>(0);
 
   useEffect(() => {
