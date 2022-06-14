@@ -7,6 +7,8 @@ import App from './App';
 import 'core-js/stable'; // 负责处理ECMAScript的核心语法， 如propmise
 import 'regenerator-runtime/runtime'; //   负责处理generator语法
 
+import 'antd/dist/antd.css';
+
 const render = (Component: React.ComponentType) => {
   ReactDOM.render(
     <HashRouter>
