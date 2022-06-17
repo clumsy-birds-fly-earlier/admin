@@ -25,7 +25,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.tsx?$/,
-				use: ["babel-loader", "ts-loader"],
+				use: ["babel-loader"],
 				exclude: /node_modules/,
 			},
 			{
@@ -35,7 +35,7 @@ module.exports = {
 					{
 						loader: "css-loader",
 						options: {
-							importLoaders: 1, // 表示 css-loader又找到需要处理的css 回向前找一个loader
+							importLoaders: 2, // 表示 css-loader又找到需要处理的css 回向前找一个loader
 						},
 					},
 					"postcss-loader",
