@@ -1,11 +1,20 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from 'react'
+import {BrowserRouter as Router} from 'react-router-dom'
+import {render, screen} from '@testing-library/react'
+import App from './App'
 
+const setup = () => {
+  return render(
+    <Router>
+      <App />
+    </Router>
+  )
+}
 describe('<App />', () => {
-  it.skip('should render correctly', () => {
-    render(<App />);
+  it('should render correctly', () => {
+    setup()
 
-    expect(screen.getByRole('button', { name: 'add' })).toBeInTheDocument();
-  });
-});
+    expect(screen.getByRole('link', {name: '图书列表'})).toBeInTheDocument()
+    expect(screen.getByRole('link', {name: '新增图书'})).toBeInTheDocument()
+  })
+})
