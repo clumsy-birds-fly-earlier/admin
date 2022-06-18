@@ -13,13 +13,13 @@ type MenuConfigItem = {
 
 const menuCfg: MenuConfigItem[] = [
   {
-    label: <Link to="/one">图书列表</Link>,
-    key: 'one',
+    label: <Link to="/bookList">图书列表</Link>,
+    key: 'bookList',
     icon: <MailOutlined />,
   },
   {
-    label: <Link to="/two">新增图书</Link>,
-    key: 'two',
+    label: <Link to="/addBook">新增图书</Link>,
+    key: 'addBook',
     icon: <CalendarOutlined />,
   },
 ]

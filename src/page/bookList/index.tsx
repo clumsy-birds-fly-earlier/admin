@@ -1,9 +1,9 @@
 import React from 'react';
 
-const home = () => {
+const BookList = () => {
     return <>
         home11111
     </>
 }
 
-export default home
+export default BookList
